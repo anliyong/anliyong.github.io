@@ -76,7 +76,7 @@
     </style>
 </head>
 <body class="bg-light text-dark antialiased">
-    <!-- 导航栏（新增隐私政策入口） -->
+    <!-- 导航栏（同时包含用户协议+隐私政策链接） -->
     <header class="fixed top-0 left-0 w-full z-50 bg-white/80 bg-blur border-b border-gray-100">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -113,9 +113,9 @@
                 </a>
             </div>
 
-            <!-- App列表区域（模板化生成） -->
+            <!-- App列表区域 -->
             <div id="apps" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- App卡片将通过JS动态生成 -->
+                <!-- App卡片动态生成 -->
             </div>
         </section>
 
@@ -227,7 +227,7 @@
         </section>
     </main>
 
-    <!-- 页脚（在"关于我们"下方添加隐私政策链接） -->
+    <!-- 页脚（明确的两个协议链接位置） -->
     <footer class="bg-dark text-white py-12">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
