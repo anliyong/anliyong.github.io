@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Showcase | 精品应用平台</title>
+    <meta name="language" content="en,zh-CN">
+    <meta name="description" content="User Agreement for AppShowcase Platform Applications">
+    <title>APP User Agreement - AppShowcase</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
@@ -12,8 +14,6 @@
                 extend: {
                     colors: {
                         primary: '#165DFF',
-                        secondary: '#7B61FF',
-                        accent: '#FF7D00',
                         dark: '#1D2939',
                         light: '#F9FAFB'
                     },
@@ -26,473 +26,190 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            .content-auto {
-                content-visibility: auto;
+            .text-important {
+                @apply font-bold text-red-700;
             }
-            .card-hover {
-                @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+            .section-spacing {
+                @apply my-8;
             }
-            .text-gradient {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
-            }
-            .bg-blur {
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
+            .clause-spacing {
+                @apply my-4;
             }
         }
 
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            scroll-behavior: smooth;
+            line-height: 1.8;
         }
 
-        .skeleton {
-            animation: skeleton-loading 1.5s linear infinite alternate;
-        }
-
-        @keyframes skeleton-loading {
-            0% {
-                background-color: rgba(200, 200, 200, 0.1);
-            }
-            100% {
-                background-color: rgba(200, 200, 200, 0.3);
-            }
-        }
-
-        .page-transition {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .lang-switch-btn {
+            @apply px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg;
         }
     </style>
 </head>
-<body class="bg-light text-dark antialiased">
-    <!-- 导航栏 -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-white/80 bg-blur border-b border-gray-100">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="#" class="text-xl font-bold text-gradient">AppShowcase</a>
-                </div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#" class="text-dark hover:text-primary font-medium transition-colors">首页</a>
-                    <a href="#features" class="text-dark hover:text-primary font-medium transition-colors">特色</a>
-                    <a href="#download" class="text-dark hover:text-primary font-medium transition-colors">下载</a>
-                    <a href="user-agreement.html" target="_blank" class="text-dark hover:text-primary font-medium transition-colors">用户协议</a>
-                </nav>
-                <button class="md:hidden text-dark">
-                    <i class="fa fa-bars text-xl"></i>
-                </button>
+<body class="bg-light text-dark">
+    <!-- 顶部导航 -->
+    <header class="sticky top-0 bg-white shadow-sm z-10 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-primary">AppShowcase</a>
+            <div>
+                <button id="lang-zh" class="lang-switch-btn mr-2 bg-primary text-white">中文</button>
+                <button id="lang-en" class="lang-switch-btn">English</button>
             </div>
         </div>
     </header>
 
-    <!-- 主内容区 -->
-    <main class="pt-24 pb-16">
-        <!-- 首页Hero区域 -->
-        <section id="home" class="container mx-auto px-4 sm:px-6 lg:px-8 mb-20 page-transition">
-            <div class="text-center max-w-4xl mx-auto mb-16">
-                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight mb-6">
-                    发现<span class="text-gradient">优质应用</span>，提升生活体验
-                </h1>
-                <p class="text-lg text-gray-600 mb-8">
-                    我们精选了一系列功能强大、设计精美的应用程序，满足你不同场景的使用需求
-                </p>
-                <a href="#apps" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 rounded-full transition-all hover:shadow-lg">
-                    浏览应用 <i class="fa fa-arrow-right ml-2"></i>
-                </a>
+    <!-- 协议主体 -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-4xl">
+        <!-- 多语言容器 -->
+        <div id="content-zh" class="lang-content">
+            <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-8">
+                <h2 class="text-important text-lg mb-2">【风险提示】</h2>
+                <p>本用户协议（以下简称“本协议”）是您（以下简称“用户”）与本APP运营方（以下简称“我们”）就您使用本APP服务所达成的具有法律约束力的契约。请您在下载、安装或使用本APP任何功能前，仔细阅读并充分理解本协议全部内容，尤其是加粗标注的免责条款、责任限制条款及争议解决条款。您点击“同意”“接受”或实际使用本APP服务，即视为您已完全理解并同意受本协议约束。若您未满18周岁，请在法定监护人陪同下阅读本协议，并在获得监护人明确同意后使用本服务。</p>
             </div>
 
-            <div id="apps" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- App卡片将通过JS动态生成 -->
-            </div>
-        </section>
+            <h2 class="text-2xl font-bold mt-10 mb-6 border-b pb-2">一、服务范围与使用前提</h2>
+            <div class="section-spacing">
+                <h3 class="text-xl font-semibold mb-4">1.1 服务内容</h3>
+                <p class="clause-spacing">本APP为您提供基础服务功能，具体以本APP实际呈现为准。我们有权根据技术发展、监管要求及运营需要，对服务功能进行优化、升级、暂停或调整，相关变更将通过APP内弹窗、公告等显著方式告知您，您继续使用服务即视为接受变更后的服务内容。</p>
 
-        <!-- App详情页 (默认隐藏) -->
-        <section id="app-detail" class="container mx-auto px-4 sm:px-6 lg:px-8 hidden page-transition">
-            <div class="flex justify-between items-center mb-8">
-                <button id="back-btn" class="flex items-center text-dark hover:text-primary transition-colors">
-                    <i class="fa fa-arrow-left mr-2"></i>
-                    <span class="font-medium">返回</span>
-                </button>
-                <a id="detail-store-link" href="#" target="_blank" class="bg-primary hover:bg-primary/90 text-white font-medium px-6 py-2 rounded-lg transition-all">
-                    <i class="fa fa-download mr-2"></i> 应用商店下载
-                </a>
+                <h3 class="text-xl font-semibold mb-4">1.2 使用前提</h3>
+                <p class="clause-spacing">您使用本APP服务，需满足以下条件：（1）具备完全民事行为能力（未成年人需经监护人同意）；（2）使用合法合规的移动设备及网络环境，设备系统版本符合本APP运行要求；（3）遵守本协议及《APP通用隐私政策》（以下简称“隐私政策”），隐私政策为本协议不可分割的组成部分，与本协议具有同等法律效力。</p>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div class="grid grid-cols-1 lg:grid-cols-2">
-                    <div class="bg-primary/10 p-8 flex flex-col items-center justify-center" id="detail-img-container">
-                        <div class="w-32 h-32 bg-primary rounded-full flex items-center justify-center mb-8">
-                            <i class="fa fa-calendar text-white text-4xl" id="detail-icon"></i>
-                        </div>
-                        <a id="card-store-link" href="#" target="_blank" class="mt-4 flex items-center bg-white shadow-md px-6 py-2 rounded-full hover:shadow-lg transition-all">
-                            <i class="fa fa-apple text-xl mr-2"></i>
-                            <span class="font-medium">前往App Store下载</span>
-                        </a>
-                        <div class="grid grid-cols-2 gap-4 w-full max-w-md mt-8">
-                            <div class="h-40 bg-primary/20 rounded-lg skeleton"></div>
-                            <div class="h-40 bg-primary/20 rounded-lg skeleton"></div>
-                            <div class="h-40 bg-primary/20 rounded-lg skeleton"></div>
-                            <div class="h-40 bg-primary/20 rounded-lg skeleton"></div>
-                        </div>
-                    </div>
+            <h2 class="text-2xl font-bold mt-10 mb-6 border-b pb-2">二、本地数据与安全责任</h2>
+            <div class="section-spacing">
+                <h3 class="text-xl font-semibold mb-4">2.1 本地数据权责</h3>
+                <p class="clause-spacing">2.1.1 本APP所有服务均基于您的本地设备运行，您在使用服务过程中产生的全部数据仅存储于您的设备内，我们不介入数据的生成、存储与管理过程，也不提供数据云端同步或备份服务。</p>
+                <p class="clause-spacing">2.1.2 您对本地数据享有完整的控制权，同时应承担数据保管的全部责任。您应采取必要措施保护数据安全，包括但不限于定期备份数据、设置复杂设备锁屏密码、避免设备被他人非法使用、安装安全防护软件、及时更新设备系统等。因设备丢失、被盗、误操作、病毒攻击、系统故障、第三方恶意攻击或其他非我们原因导致的本地数据丢失、泄露、损坏或被滥用，相关责任均由您自行承担。</p>
 
-                    <div class="p-8 lg:p-12">
-                        <h2 class="text-3xl font-bold mb-4" id="detail-title">时光管理</h2>
-                        <div class="flex items-center mb-6">
-                            <div class="flex text-yellow-400 mr-2">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-o"></i>
-                            </div>
-                            <span class="text-gray-600">4.8 (1.2k 评价)</span>
-                        </div>
-
-                        <div class="space-y-6 mb-8" id="detail-content">
-                            <p class="text-lg text-gray-700">
-                                时光管理是一款集日程规划、任务提醒、时间统计于一体的综合性时间管理应用。无论你是学生、职场人士还是自由职业者，都能找到适合自己的时间管理方式。
-                            </p>
-                            <h3 class="text-xl font-bold">核心功能</h3>
-                            <ul class="space-y-2 text-gray-700">
-                                <li class="flex items-start">
-                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>智能日程规划，根据你的习惯自动推荐最佳安排</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>多维度数据统计，直观展示你的时间使用情况</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>番茄工作法集成，提高专注度和工作效率</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fa fa-check-circle text-primary mt-1 mr-2"></i>
-                                    <span>跨设备同步，随时随地访问你的日程数据</span>
-                                </li>
-                            </ul>
-
-                            <h3 class="text-xl font-bold">适用场景</h3>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm">工作办公</span>
-                                <span class="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm">学习备考</span>
-                                <span class="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm">生活规划</span>
-                                <span class="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm">团队协作</span>
-                            </div>
-
-                            <div class="pt-4 border-t border-gray-100">
-                                <a id="content-store-link" href="#" target="_blank" class="inline-flex items-center bg-primary hover:bg-primary/90 text-white font-medium px-6 py-2 rounded-lg transition-all">
-                                    <i class="fa fa-shopping-bag mr-2"></i>
-                                    立即前往应用商店下载
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="pt-6 border-t border-gray-100">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <span class="text-gray-500 text-sm">兼容系统</span>
-                                    <div class="flex items-center mt-1">
-                                        <i class="fa fa-apple text-xl mr-3"></i>
-                                        <i class="fa fa-android text-xl mr-3"></i>
-                                        <i class="fa fa-windows text-xl"></i>
-                                    </div>
-                                </div>
-                                <div class="text-right">
-                                    <span class="text-gray-500 text-sm">更新时间</span>
-                                    <p class="font-medium">2025.11.20</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="text-xl font-semibold mb-4">2.2 设备与权限责任</h3>
+                <p class="clause-spacing">本APP为实现服务功能可能申请必要的系统权限，所有权限申请均会通过设备弹窗明确告知用途，您可自主选择同意或拒绝。您可随时在设备“设置-应用管理-本APP-权限”中管理权限，关闭非必要权限可能导致对应功能无法正常使用，由此产生的服务中断、功能异常等后果，由您自行承担。</p>
             </div>
-        </section>
+
+            <h2 class="text-2xl font-bold mt-10 mb-6 border-b pb-2">三、用户的权利与义务</h2>
+            <div class="section-spacing">
+                <h3 class="text-xl font-semibold mb-4">3.1 用户权利</h3>
+                <ul class="list-disc pl-6 clause-spacing space-y-2">
+                    <li>3.1.1 您有权在符合本协议约定的范围内，自由使用本APP提供的服务功能；</li>
+                    <li>3.1.2 您有权根据隐私政策及本协议约定，管理您的个人信息及本地数据，包括查询、修改、删除数据及管理权限；</li>
+                    <li>3.1.3 您有权对本APP服务质量提出建议或投诉，我们将在合理期限内通过APP内反馈渠道回复处理结果。</li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-4">3.2 用户义务</h3>
+                <ul class="list-disc pl-6 clause-spacing space-y-4">
+                    <li>3.2.1 您在使用本APP服务时，应遵守《中华人民共和国民法典》《网络安全法》《个人信息保护法》等相关法律法规及公序良俗，不得利用本APP从事任何违法犯罪活动，包括但不限于：危害国家安全、破坏民族团结或社会公共利益；制作、传播淫秽、色情、暴力、恐怖或诽谤他人的内容；窃取、泄露他人隐私或个人信息；传播病毒、恶意代码或实施网络攻击，干扰本APP正常运行。</li>
+                    <li>3.2.2 您应保证在使用本APP过程中上传、输入或提交的所有内容（包括但不限于各类数据、文件等）均为您合法所有或已获得合法授权，不侵犯任何第三方的知识产权、名誉权、肖像权等合法权益。若因您提交的内容引发纠纷，您应自行承担全部责任并独立解决。</li>
+                    <li>3.2.3 您不得实施任何破坏本APP服务安全或滥用服务资源的行为，包括但不限于：对本APP软件进行逆向工程、破解、篡改、拆解或制作衍生作品；通过自动化脚本、刷量工具等方式批量使用服务；绕过本APP的功能限制或安全防护措施；使用非官方渠道下载、安装的本APP版本。</li>
+                    <li>3.2.4 您应尊重本APP的知识产权，未经我们书面许可，不得擅自复制、传播、使用本APP的软件代码、界面设计、图标、商标等知识产权内容。</li>
+                </ul>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10 mb-6 border-b pb-2">四、服务规范与免责条款</h2>
+            <div class="section-spacing">
+                <h3 class="text-xl font-semibold mb-4">4.1 服务提供规范</h3>
+                <p class="clause-spacing">我们将尽合理努力保障本APP服务的稳定性，但不承诺服务无中断、无故障或绝对安全。因技术升级、服务器维护、网络拥堵、电力中断、自然灾害等不可抗力或非我们可控因素导致服务暂停或异常的，我们将在合理范围内及时修复，但不承担因此产生的任何责任。</p>
+
+                <h3 class="text-xl font-semibold mb-4">4.2 核心免责条款</h3>
+                <ul class="list-disc pl-6 clause-spacing space-y-4">
+                    <li class="text-important">4.2.1 本APP仅提供技术服务支持，不对您使用本APP产生的任何结果（包括但不限于功能使用效果、数据处理结果等）作出明示或暗示的保证。因您对服务功能的理解偏差、操作不当、设备适配问题或使用场景不符合设计用途导致的任何问题，均由您自行承担。</li>
+                    <li class="text-important">4.2.2 若您使用本APP处理涉及商业秘密、核心数据等重要信息，应自行采取加密、权限控制等额外安全措施，此类信息的安全性、保密性由您全权负责，我们不承担任何保障责任。</li>
+                    <li class="text-important">4.2.3 因您违反本协议约定、滥用服务权限、提供虚假信息或违反法律法规使用本APP，导致您或第三方遭受任何风险与损失的，由您自行承担全部责任，我们有权根据情节轻重暂停、限制或终止为您提供服务。</li>
+                    <li class="text-important">4.2.4 您应通过本APP官方渠道获取服务，若您因使用非官方途径的服务或资源导致损失，相关责任由您自行承担。</li>
+                </ul>
+
+                <h3 class="text-xl font-semibold mb-4">4.3 危险环境使用免责条款</h3>
+                <p class="clause-spacing text-important">4.3.1 本APP仅适用于常规民用场景，严禁在以下危险环境中使用本APP或依赖本APP功能进行决策：（1）医疗急救、生命保障、工业控制、航空航天等高危行业及关键领域；（2）车辆驾驶、高空作业、深水作业等需高度专注的危险操作场景；（3）其他可能因APP功能故障、延迟导致人身伤亡或重大财产损失的场景。</p>
+                <p class="clause-spacing text-important">4.3.2 若您在上述危险环境中使用本APP，由此引发的一切人身伤害、财产损失及法律责任，均由您自行承担，我们不承担任何形式的赔偿或连带责任。</p>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10 mb-6 border-b pb-2">五、知识产权</h2>
+            <div class="section-spacing">
+                <p class="clause-spacing">5.1 本APP的软件程序、源代码、界面设计、图标、文字内容、商标等所有知识产权，均归我们或相关权利人所有。未经我们书面许可，您不得擅自使用、复制、修改、传播或用于商业目的。</p>
+                <p class="clause-spacing">5.2 您在使用本APP过程中上传、输入的内容，其知识产权归您所有，但您同意授予我们全球范围内、非独占、免费的使用权，该使用权仅限于为提供本地服务所必需的范围（如本地存储、功能适配、数据展示等）。您删除本地内容或卸载本APP后，该授权自动终止，设备本地生成的缓存数据将随卸载或清理操作清除。</p>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10 mb-6 border-b pb-2">六、协议的变更与终止</h2>
+            <div class="section-spacing">
+                <h3 class="text-xl font-semibold mb-4">6.1 协议变更</h3>
+                <p class="clause-spacing">我们有权根据法律法规更新、技术升级或服务运营需要，对本协议内容进行修改。变更后的协议将通过APP内弹窗、公告等显著方式公示，公示后若您继续使用本APP服务，即视为您同意变更后的协议；若您不同意，应立即停止使用服务并卸载APP，协议随之终止。若政策变更涉及减少您的权利或增加您的义务，我们将以更显著的方式（如多次弹窗）告知您。</p>
+
+                <h3 class="text-xl font-semibold mb-4">6.2 协议终止</h3>
+                <ul class="list-disc pl-6 clause-spacing space-y-2">
+                    <li>6.2.1 本协议自您点击“同意”或实际使用本APP服务之日起生效，至您停止使用本APP且卸载该应用，或我们终止全部服务之日止。</li>
+                    <li>6.2.2 出现以下情形时，我们有权单方终止本协议及服务：（1）您严重违反本协议约定，经催告后在合理期限内未改正；（2）为配合监管部门调查或遵守法律法规强制性规定的必要情形。</li>
+                    <li>6.2.3 协议终止后，本协议中关于知识产权保护、免责条款、争议解决等具有独立性的条款仍然有效。</li>
+                </ul>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10 mb-6 border-b pb-2">七、违约责任</h2>
+            <div class="section-spacing">
+                <p class="clause-spacing">若您违反本协议约定，我们有权采取以下一项或多项措施：（1）发出警告并要求限期改正；（2）限制、暂停您的部分或全部服务功能；（3）终止为您提供全部服务。</p>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10 mb-6 border-b pb-2">八、争议解决与法律适用</h2>
+            <div class="section-spacing">
+                <p class="clause-spacing">8.1 本协议的成立、生效、履行、解释及争议解决，均适用中华人民共和国法律（港澳台地区法律除外）；若用户为境外用户，同时应遵守用户所在国家或地区的法律法规，如本协议内容与用户所在地区法律冲突，以当地法律规定为准。</p>
+                <p class="clause-spacing">8.2 若您与我们就本协议履行发生争议，应首先通过友好协商解决；协商不成的，任何一方均有权依法向<u>本APP运营主体所在地有管辖权的人民法院</u>提起诉讼。</p>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10 mb-6 border-b pb-2">九、其他</h2>
+            <div class="section-spacing">
+                <ul class="list-disc pl-6 clause-spacing space-y-2">
+                    <li>9.1 本协议是您与我们之间关于使用本APP服务的完整协议，取代此前双方就相关事宜达成的任何口头或书面约定。</li>
+                    <li>9.2 若本协议中的任何条款被有管辖权的法院认定为无效或不可执行，不影响其他条款的效力，其他条款仍应继续履行。</li>
+                    <li>9.3 反馈与联系：若您有任何诉求，可通过本APP内“设置-意见反馈”功能获取联系方式并提交诉求，我们将在合理期限内予以回复。</li>
+                    <li>9.4 本协议自发布之日起生效。</li>
+                </ul>
+            </div>
+
+            <div class="mt-12 text-center text-gray-500 text-sm">
+                <p>（注：文档部分内容可能由 AI 生成）</p>
+            </div>
+        </div>
+
+        <!-- 英文版本（全球化适配） -->
+        <div id="content-en" class="lang-content hidden">
+            <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-8">
+                <h2 class="text-important text-lg mb-2">【Risk Warning】</h2>
+                <p>This User Agreement (hereinafter referred to as the "Agreement") is a legally binding contract between you (hereinafter referred to as the "User") and the operator of this APP (hereinafter referred to as "we") regarding your use of the APP's services. Please carefully read and fully understand all the contents of this Agreement, especially the bolded disclaimer clauses, liability limitation clauses, and dispute resolution clauses, before downloading, installing, or using any function of this APP. By clicking "Agree", "Accept", or actually using the APP's services, you are deemed to have fully understood and agreed to be bound by this Agreement. If you are under 18 years old, please read this Agreement accompanied by your legal guardian and use the services only after obtaining the guardian's explicit consent.</p>
+            </div>
+
+            <!-- 英文协议内容省略，完整版本可根据中文内容同步翻译，此处保留结构 -->
+            <div class="text-center py-10">
+                <p class="text-lg mb-4">English version of the agreement is available upon request</p>
+                <a href="mailto:support@appshowcase.com" class="text-primary hover:underline">Contact us to get full English agreement</a>
+            </div>
+        </div>
     </main>
 
-    <!-- 页脚（添加用户协议链接） -->
-    <footer class="bg-dark text-white py-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">AppShowcase</h3>
-                    <p class="text-gray-400 mb-4">
-                        精选优质应用，提升数字生活品质
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fa fa-weibo text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fa fa-wechat text-xl"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fa fa-twitter text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">快速链接</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
-                        <li><a href="#apps" class="text-gray-400 hover:text-white transition-colors">应用列表</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">联系客服</a></li>
-                        <li><a href="user-agreement.html" target="_blank" class="text-gray-400 hover:text-white transition-colors">用户协议</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold mb-4">订阅更新</h3>
-                    <p class="text-gray-400 mb-4">
-                        第一时间获取最新应用推荐和使用技巧
-                    </p>
-                    <div class="flex">
-                        <input type="email" placeholder="你的邮箱地址" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg w-full focus:outline-none focus:ring-2 focus:ring-primary">
-                        <button class="bg-primary hover:bg-primary/90 px-4 py-2 rounded-r-lg transition-colors">
-                            <i class="fa fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                © 2025 AppShowcase. 保留所有权利。
-            </div>
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 AppShowcase. All rights reserved.</p>
+            <p class="text-gray-400 text-sm mt-2">This agreement is applicable globally, subject to local laws and regulations</p>
         </div>
     </footer>
 
     <script>
-        const appData = [
-            {
-                id: 1,
-                title: "时光管理",
-                brief: "高效的时间管理工具，帮助你合理规划日程，提高工作效率，告别拖延症。",
-                icon: "fa-calendar",
-                color: "primary",
-                rating: "4.8",
-                reviews: "1.2k",
-                updateTime: "2025.11.20",
-                description: "时光管理是一款集日程规划、任务提醒、时间统计于一体的综合性时间管理应用。无论你是学生、职场人士还是自由职业者，都能找到适合自己的时间管理方式。",
-                features: [
-                    "智能日程规划，根据你的习惯自动推荐最佳安排",
-                    "多维度数据统计，直观展示你的时间使用情况",
-                    "番茄工作法集成，提高专注度和工作效率",
-                    "跨设备同步，随时随地访问你的日程数据"
-                ],
-                tags: ["工作办公", "学习备考", "生活规划", "团队协作"],
-                storeLink: "https://apps.apple.com/cn/app/%E6%97%B6%E5%85%89%E7%AE%A1%E7%90%86/id1234567890"
-            },
-            {
-                id: 2,
-                title: "健康追踪",
-                brief: "全面的健康管理应用，记录饮食、运动、睡眠数据，生成专业的健康报告。",
-                icon: "fa-heart",
-                color: "secondary",
-                rating: "4.9",
-                reviews: "2.5k",
-                updateTime: "2025.11.15",
-                description: "健康追踪是一款全方位的健康管理应用，帮助你记录和分析饮食、运动、睡眠等健康数据，生成个性化的健康建议和改善方案。",
-                features: [
-                    "精准记录饮食摄入，自动计算卡路里和营养成分",
-                    "运动轨迹追踪，支持多种运动模式和目标设定",
-                    "睡眠质量分析，提供改善睡眠的专业建议",
-                    "定期生成健康报告，直观展示身体状态变化"
-                ],
-                tags: ["健康管理", "运动健身", "饮食控制", "睡眠监测"],
-                storeLink: "https://apps.apple.com/cn/app/%E5%81%A5%E5%BA%B7%E8%BF%BD%E8%B7%9F/id0987654321"
-            },
-            {
-                id: 3,
-                title: "知识宝库",
-                brief: "海量优质学习资源，个性化推荐，让学习变得轻松有趣，随时随地提升自己。",
-                icon: "fa-book",
-                color: "accent",
-                rating: "4.7",
-                reviews: "3.8k",
-                updateTime: "2025.11.10",
-                description: "知识宝库是一款一站式学习平台，汇聚了海量优质的学习资源，支持个性化学习路径规划，让学习变得更加高效和有趣。",
-                features: [
-                    "海量精品课程，覆盖各行各业的知识领域",
-                    "智能学习推荐，根据兴趣和目标定制学习内容",
-                    "离线下载功能，随时随地学习不受网络限制",
-                    "学习进度同步，多设备无缝切换学习状态"
-                ],
-                tags: ["在线学习", "技能提升", "知识积累", "终身学习"],
-                storeLink: "https://apps.apple.com/cn/app/%E7%9F%A5%E8%AF%86%E5%AE%9D%E5%BA%93/id1122334455"
-            }
-        ];
+        // 多语言切换功能
+        const langZhBtn = document.getElementById('lang-zh');
+        const langEnBtn = document.getElementById('lang-en');
+        const contentZh = document.getElementById('content-zh');
+        const contentEn = document.getElementById('content-en');
 
-        function renderAppCards() {
-            const appsContainer = document.getElementById('apps');
-            appsContainer.innerHTML = '';
-            
-            appData.forEach(app => {
-                const cardHtml = `
-                    <div class="app-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover cursor-pointer" data-app="${app.id}">
-                        <div class="h-48 bg-${app.color}/10 flex items-center justify-center">
-                            <div class="w-24 h-24 bg-${app.color} rounded-full flex items-center justify-center">
-                                <i class="fa ${app.icon} text-white text-3xl"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3">${app.title}</h3>
-                            <p class="text-gray-600 mb-4">${app.brief}</p>
-                            <div class="flex flex-wrap items-center justify-between">
-                                <div class="flex items-center text-${app.color} font-medium">
-                                    <span>查看详情</span>
-                                    <i class="fa fa-chevron-right ml-2"></i>
-                                </div>
-                                <a href="${app.storeLink}" target="_blank" class="text-${app.color} hover:underline flex items-center ml-4">
-                                    <i class="fa fa-download mr-1"></i>
-                                    <span class="text-sm">下载</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                appsContainer.innerHTML += cardHtml;
-            });
-            
-            bindCardClickEvents();
-        }
-
-        function renderAppDetail(appId) {
-            const app = appData.find(item => item.id === appId);
-            if (!app) return;
-
-            document.getElementById('detail-title').textContent = app.title;
-            document.getElementById('detail-icon').className = `fa ${app.icon} text-white text-4xl`;
-            
-            const imgContainer = document.getElementById('detail-img-container');
-            imgContainer.className = `bg-${app.color}/10 p-8 flex flex-col items-center justify-center`;
-            
-            const iconContainer = document.getElementById('detail-icon').parentElement;
-            iconContainer.className = `w-32 h-32 bg-${app.color} rounded-full flex items-center justify-center mb-8`;
-            
-            const starHalf = app.rating >= 4.5 ? 'fa-star' : 'fa-star-half-o';
-            const ratingHtml = `
-                <div class="flex text-yellow-400 mr-2">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa ${starHalf}"></i>
-                </div>
-                <span class="text-gray-600">${app.rating} (${app.reviews} 评价)</span>
-            `;
-            document.querySelector('#app-detail .flex.items-center.mb-6').innerHTML = ratingHtml;
-            
-            document.querySelector('#app-detail .font-medium').textContent = app.updateTime;
-            
-            document.getElementById('detail-store-link').href = app.storeLink;
-            document.getElementById('card-store-link').href = app.storeLink;
-            document.getElementById('content-store-link').href = app.storeLink;
-            
-            let contentHtml = `
-                <p class="text-lg text-gray-700">${app.description}</p>
-                <h3 class="text-xl font-bold">核心功能</h3>
-                <ul class="space-y-2 text-gray-700">
-            `;
-            
-            app.features.forEach(feature => {
-                contentHtml += `
-                    <li class="flex items-start">
-                        <i class="fa fa-check-circle text-${app.color} mt-1 mr-2"></i>
-                        <span>${feature}</span>
-                    </li>
-                `;
-            });
-            
-            contentHtml += `
-                </ul>
-                <h3 class="text-xl font-bold">适用场景</h3>
-                <div class="flex flex-wrap gap-3">
-            `;
-            
-            app.tags.forEach(tag => {
-                contentHtml += `
-                    <span class="px-4 py-1 bg-${app.color}/10 text-${app.color} rounded-full text-sm">${tag}</span>
-                `;
-            });
-            
-            contentHtml += `
-                </div>
-                <div class="pt-4 border-t border-gray-100">
-                    <a id="content-store-link" href="${app.storeLink}" target="_blank" class="inline-flex items-center bg-${app.color} hover:bg-${app.color}/90 text-white font-medium px-6 py-2 rounded-lg transition-all">
-                        <i class="fa fa-shopping-bag mr-2"></i>
-                        立即前往应用商店下载
-                    </a>
-                </div>
-            `;
-            document.getElementById('detail-content').innerHTML = contentHtml;
-            
-            document.getElementById('home').classList.add('hidden');
-            document.getElementById('app-detail').classList.remove('hidden');
-            
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        function bindCardClickEvents() {
-            const appCards = document.querySelectorAll('.app-card');
-            appCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const appId = parseInt(card.dataset.app);
-                    renderAppDetail(appId);
-                });
-            });
-        }
-
-        document.getElementById('back-btn').addEventListener('click', () => {
-            document.getElementById('app-detail').classList.add('hidden');
-            document.getElementById('home').classList.remove('hidden');
-            
-            document.getElementById('apps').scrollIntoView({
-                behavior: 'smooth'
-            });
+        langZhBtn.addEventListener('click', () => {
+            contentZh.classList.remove('hidden');
+            contentEn.classList.add('hidden');
+            langZhBtn.classList.add('bg-primary', 'text-white');
+            langEnBtn.classList.remove('bg-primary', 'text-white');
         });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-md');
-                header.classList.remove('bg-white/80');
-                header.classList.add('bg-white');
-            } else {
-                header.classList.remove('shadow-md');
-                header.classList.add('bg-white/80');
-                header.classList.remove('bg-white');
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderAppCards();
+        langEnBtn.addEventListener('click', () => {
+            contentEn.classList.remove('hidden');
+            contentZh.classList.add('hidden');
+            langEnBtn.classList.add('bg-primary', 'text-white');
+            langZhBtn.classList.remove('bg-primary', 'text-white');
         });
     </script>
 </body>
