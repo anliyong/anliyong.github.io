@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
-        // Tailwind 配置
         tailwind.config = {
             theme: {
                 extend: {
@@ -42,13 +41,11 @@
             }
         }
 
-        /* 基础样式 */
         body {
             font-family: 'Inter', system-ui, sans-serif;
             scroll-behavior: smooth;
         }
 
-        /* 加载动画 */
         .skeleton {
             animation: skeleton-loading 1.5s linear infinite alternate;
         }
@@ -62,7 +59,6 @@
             }
         }
 
-        /* 页面过渡动画 */
         .page-transition {
             animation: fadeIn 0.5s ease-in-out;
         }
@@ -80,7 +76,7 @@
     </style>
 </head>
 <body class="bg-light text-dark antialiased">
-    <!-- 导航栏 -->
+    <!-- 导航栏（新增隐私政策入口） -->
     <header class="fixed top-0 left-0 w-full z-50 bg-white/80 bg-blur border-b border-gray-100">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -91,6 +87,8 @@
                     <a href="#" class="text-dark hover:text-primary font-medium transition-colors">首页</a>
                     <a href="#features" class="text-dark hover:text-primary font-medium transition-colors">特色</a>
                     <a href="#download" class="text-dark hover:text-primary font-medium transition-colors">下载</a>
+                    <a href="user-agreement.html" target="_blank" class="text-dark hover:text-primary font-medium transition-colors">用户协议</a>
+                    <a href="privacy-policy.html" target="_blank" class="text-dark hover:text-primary font-medium transition-colors">隐私政策</a>
                 </nav>
                 <button class="md:hidden text-dark">
                     <i class="fa fa-bars text-xl"></i>
@@ -115,7 +113,7 @@
                 </a>
             </div>
 
-            <!-- App列表区域 - 模板化生成 -->
+            <!-- App列表区域（模板化生成） -->
             <div id="apps" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- App卡片将通过JS动态生成 -->
             </div>
@@ -140,7 +138,6 @@
                         <div class="w-32 h-32 bg-primary rounded-full flex items-center justify-center mb-8">
                             <i class="fa fa-calendar text-white text-4xl" id="detail-icon"></i>
                         </div>
-                        <!-- 应用商店跳转链接 -->
                         <a id="card-store-link" href="#" target="_blank" class="mt-4 flex items-center bg-white shadow-md px-6 py-2 rounded-full hover:shadow-lg transition-all">
                             <i class="fa fa-apple text-xl mr-2"></i>
                             <span class="font-medium">前往App Store下载</span>
@@ -230,7 +227,7 @@
         </section>
     </main>
 
-    <!-- 页脚 -->
+    <!-- 页脚（在"关于我们"下方添加隐私政策链接） -->
     <footer class="bg-dark text-white py-12">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -257,6 +254,8 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
                         <li><a href="#apps" class="text-gray-400 hover:text-white transition-colors">应用列表</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
+                        <li><a href="privacy-policy.html" target="_blank" class="text-gray-400 hover:text-white transition-colors">隐私政策</a></li>
+                        <li><a href="user-agreement.html" target="_blank" class="text-gray-400 hover:text-white transition-colors">用户协议</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">联系客服</a></li>
                     </ul>
                 </div>
@@ -281,7 +280,7 @@
 
     <!-- JavaScript -->
     <script>
-        // 应用数据模板 - 复制此结构添加新应用
+        // 应用数据模板
         const appData = [
             {
                 id: 1,
@@ -300,7 +299,6 @@
                     "跨设备同步，随时随地访问你的日程数据"
                 ],
                 tags: ["工作办公", "学习备考", "生活规划", "团队协作"],
-                // 模拟应用商店链接
                 storeLink: "https://apps.apple.com/cn/app/%E6%97%B6%E5%85%89%E7%AE%A1%E7%90%86/id1234567890"
             },
             {
@@ -320,7 +318,6 @@
                     "定期生成健康报告，直观展示身体状态变化"
                 ],
                 tags: ["健康管理", "运动健身", "饮食控制", "睡眠监测"],
-                // 模拟应用商店链接
                 storeLink: "https://apps.apple.com/cn/app/%E5%81%A5%E5%BA%B7%E8%BF%BD%E8%B7%9F/id0987654321"
             },
             {
@@ -340,38 +337,14 @@
                     "学习进度同步，多设备无缝切换学习状态"
                 ],
                 tags: ["在线学习", "技能提升", "知识积累", "终身学习"],
-                // 模拟应用商店链接
                 storeLink: "https://apps.apple.com/cn/app/%E7%9F%A5%E8%AF%86%E5%AE%9D%E5%BA%93/id1122334455"
-            },
-            // 示例：添加新应用只需复制以下结构并修改数据
-            /*
-            {
-                id: 4,
-                title: "新应用名称",
-                brief: "应用简短介绍",
-                icon: "fa-图标名称", // 从font-awesome选择
-                color: "primary/secondary/accent", // 选择配色
-                rating: "4.5",
-                reviews: "500",
-                updateTime: "2025.11.05",
-                description: "应用详细描述",
-                features: [
-                    "功能1",
-                    "功能2",
-                    "功能3",
-                    "功能4"
-                ],
-                tags: ["标签1", "标签2", "标签3", "标签4"],
-                storeLink: "https://apps.apple.com/cn/app/新应用/id6677889900"
-            },
-            */
+            }
         ];
 
-        // ========== 模板化渲染函数 ==========
-        // 渲染App卡片列表
+        // 渲染App卡片
         function renderAppCards() {
             const appsContainer = document.getElementById('apps');
-            appsContainer.innerHTML = ''; // 清空容器
+            appsContainer.innerHTML = '';
             
             appData.forEach(app => {
                 const cardHtml = `
@@ -389,7 +362,6 @@
                                     <span>查看详情</span>
                                     <i class="fa fa-chevron-right ml-2"></i>
                                 </div>
-                                <!-- 卡片内商店链接 -->
                                 <a href="${app.storeLink}" target="_blank" class="text-${app.color} hover:underline flex items-center ml-4">
                                     <i class="fa fa-download mr-1"></i>
                                     <span class="text-sm">下载</span>
@@ -401,27 +373,23 @@
                 appsContainer.innerHTML += cardHtml;
             });
             
-            // 重新绑定卡片点击事件
             bindCardClickEvents();
         }
 
-        // 渲染App详情页
+        // 渲染App详情
         function renderAppDetail(appId) {
             const app = appData.find(item => item.id === appId);
             if (!app) return;
 
-            // 更新标题和图标
             document.getElementById('detail-title').textContent = app.title;
             document.getElementById('detail-icon').className = `fa ${app.icon} text-white text-4xl`;
             
-            // 更新颜色主题
             const imgContainer = document.getElementById('detail-img-container');
             imgContainer.className = `bg-${app.color}/10 p-8 flex flex-col items-center justify-center`;
             
             const iconContainer = document.getElementById('detail-icon').parentElement;
             iconContainer.className = `w-32 h-32 bg-${app.color} rounded-full flex items-center justify-center mb-8`;
             
-            // 更新评分和评价数
             const starHalf = app.rating >= 4.5 ? 'fa-star' : 'fa-star-half-o';
             const ratingHtml = `
                 <div class="flex text-yellow-400 mr-2">
@@ -435,15 +403,12 @@
             `;
             document.querySelector('#app-detail .flex.items-center.mb-6').innerHTML = ratingHtml;
             
-            // 更新更新时间
             document.querySelector('#app-detail .font-medium').textContent = app.updateTime;
             
-            // 更新应用商店链接（多处链接统一指向）
             document.getElementById('detail-store-link').href = app.storeLink;
             document.getElementById('card-store-link').href = app.storeLink;
             document.getElementById('content-store-link').href = app.storeLink;
             
-            // 更新描述和功能
             let contentHtml = `
                 <p class="text-lg text-gray-700">${app.description}</p>
                 <h3 class="text-xl font-bold">核心功能</h3>
@@ -473,7 +438,6 @@
             
             contentHtml += `
                 </div>
-                <!-- 详情页商店链接 -->
                 <div class="pt-4 border-t border-gray-100">
                     <a id="content-store-link" href="${app.storeLink}" target="_blank" class="inline-flex items-center bg-${app.color} hover:bg-${app.color}/90 text-white font-medium px-6 py-2 rounded-lg transition-all">
                         <i class="fa fa-shopping-bag mr-2"></i>
@@ -483,11 +447,9 @@
             `;
             document.getElementById('detail-content').innerHTML = contentHtml;
             
-            // 显示详情页，隐藏首页
             document.getElementById('home').classList.add('hidden');
             document.getElementById('app-detail').classList.remove('hidden');
             
-            // 滚动到详情页顶部
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -505,12 +467,11 @@
             });
         }
 
-        // 返回按钮点击事件
+        // 返回按钮事件
         document.getElementById('back-btn').addEventListener('click', () => {
             document.getElementById('app-detail').classList.add('hidden');
             document.getElementById('home').classList.remove('hidden');
             
-            // 滚动到App列表
             document.getElementById('apps').scrollIntoView({
                 behavior: 'smooth'
             });
@@ -544,7 +505,7 @@
             }
         });
 
-        // 页面加载时渲染App卡片
+        // 页面加载渲染
         document.addEventListener('DOMContentLoaded', () => {
             renderAppCards();
         });
